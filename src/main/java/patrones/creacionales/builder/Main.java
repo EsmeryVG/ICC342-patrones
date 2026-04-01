@@ -1,7 +1,15 @@
 package patrones.creacionales.builder;
-
+// Cliente
 public class Main {
-    public static void main(String[] args) {
-        // Ejemplo del patrón
+    public static void main(String[] args)
+    {
+        GamingComputerBuilder gamingBuilder
+            = new GamingComputerBuilder();
+        ComputerDirector director = new ComputerDirector();
+
+        director.construct(gamingBuilder);
+        Computer gamingComputer = gamingBuilder.getResult();
+
+        gamingComputer.displayInfo();
     }
 }
