@@ -2,6 +2,13 @@ package patrones.creacionales.abstractfactory;
 
 public class Main {
     public static void main(String[] args) {
-        // Ejemplo del patrón
+
+        GUIFactory factory = new WindowsF(); // o MacF
+
+        Button b = factory.createButton();
+        Window w = factory.createWindow();
+
+        b.render();
+        w.open();
     }
 }
