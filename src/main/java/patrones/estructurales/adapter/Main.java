@@ -4,7 +4,7 @@ interface Notificador {
     void enviarMensaje(String mensaje);
 }
 
-// Esta es la clase que YA EXISTE.
+// Esta es la clase que ya existe
 // Puede ser una librería externa o un sistema legado.
 // Su interfaz no coincide con la que espera el cliente.
 class WhatsAppAPI {
@@ -15,7 +15,7 @@ class WhatsAppAPI {
     }
 
     public void sendText(String phone, String text) {
-        System.out.println("WhatsAppAPI -> Enviando al número " + phone + ": " + text);
+        System.out.println("WhatsAppAPI -> Enviando al numero " + phone + ": " + text);
     }
 
     public String getNumeroTelefono() {
@@ -33,7 +33,6 @@ class WhatsAppAdapter implements Notificador {
         this.whatsAppAPI = whatsAppAPI;
     }
 
-    @Override
     public void enviarMensaje(String mensaje) {
         // Aquí ocurre la traducción:
         // el cliente llama enviarMensaje(...)
@@ -58,6 +57,7 @@ class SistemaAlertas {
         System.out.println("SistemaAlertas -> Alerta enviada.");
     }
 }
+
 
 public class Main {
     public static void main(String[] args) {
